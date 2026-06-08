@@ -1,4 +1,4 @@
-name: Hello World
+name: Environment Information
 
 on:
   push:
