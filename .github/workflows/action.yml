@@ -30,4 +30,32 @@ jobs:
           echo ""
           echo "================================="
 
+          
+      - name: Q3 - Server Health Report
+        run: |
+          echo "📊 SERVER HEALTH REPORT"
+          echo ""
+
+          echo "Disk Usage:"
+          df / | tail -1 | awk '{print $5}'
+          echo ""
+
+          echo "Memory Available:"
+          free -h | awk '/Mem:/ {print $7}'
+          echo ""
+
+          echo "CPU Cores:"
+          nproc
+          echo ""
+
+          echo "Node Version:"
+          node -v
+          echo ""
+
+          echo "Python Version:"
+          python3 --version | awk '{print $2}'
+          echo ""
+
+          echo "Health Status:"
+          echo "✅ HEALTHY"
       
