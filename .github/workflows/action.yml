@@ -1,15 +1,3 @@
-# name: Hello World
-
-# on: push
-
-# jobs:
-#   hello:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - run: echo "Hello from GitHub Actions"
-
-
 name: Question 1
 
 on:
@@ -26,3 +14,20 @@ jobs:
           echo "You pushed to ${{ github.ref_name }}"
           echo "from repository ${{ github.event.repository.name }}"
           echo "at $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M IST')"
+
+      - name: Q2 - Deployment Receipt
+        run: |
+          echo "================================="
+          echo "        DEPLOYMENT RECEIPT"
+          echo "================================="
+          echo ""
+          echo "Repository   : ${{ github.event.repository.name }}"
+          echo "Branch       : ${{ github.ref_name }}"
+          echo "Triggered By : ${{ github.actor }}"
+          echo "Event Type   : ${{ github.event_name }}"
+          echo ""
+          echo "Timestamp    : $(date)"
+          echo ""
+          echo "================================="
+
+      
